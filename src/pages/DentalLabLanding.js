@@ -15,6 +15,7 @@ import CTASection from '../components/landing/CTASection';
 import Footer from '../components/landing/Footer';
 import ScrollProgress from '../components/ui/ScrollProgress';
 import ROICalculator from '../components/tools/ROICalculator';
+import InteractiveScenarioBuilder from '../components/tools/InteractiveScenarioBuilder';
 import BundleBuilder3D from '../components/three/BundleBuilder3D';
 
 const DentalLabLanding = () => {
@@ -62,6 +63,7 @@ const DentalLabLanding = () => {
         <CaseStudiesSection />
         <LeadMagnets />
         <ROICalculator />
+        <InteractiveScenarioBuilder />
         <TestimonialsCarousel />
         <CTASection />
         <Footer />
