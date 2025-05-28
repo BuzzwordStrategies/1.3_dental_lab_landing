@@ -7,6 +7,15 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FloatingDentalModels from '../components/three/FloatingDentalModels';
 import CountUp from '../components/ui/CountUp';
+import SEOAuditForm from '../components/forms/SEOAuditForm';
+import BlogPostForm from '../components/forms/BlogPostForm';
+import BundleCard from '../components/landing/BundleCard';
+import DiscoveryCallModal from '../components/landing/DiscoveryCallModal';
+import FloatingCTA from '../components/landing/FloatingCTA';
+import SectionCTA from '../components/landing/SectionCTA';
+import PerformanceGuarantee from '../components/landing/PerformanceGuarantee';
+import ServiceIcon from '../components/icons/ServiceIcon';
+import '../styles/animations.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +41,36 @@ const DentalLabMarketingLanding = () => {
   const [showBundleButton, setShowBundleButton] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [showSEOAuditForm, setShowSEOAuditForm] = useState(false);
+  const [showBlogPostForm, setShowBlogPostForm] = useState(false);
+  const [showDiscoveryModal, setShowDiscoveryModal] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+  // Lead magnet CTAs configuration
+  const leadMagnetCTAs = [
+    {
+      id: 'seo-audit',
+      icon: '🔍',
+      title: 'Free AI-Powered SEO Audit',
+      subtitle: 'Discover where you\'re winning & losing online',
+      description: 'Get a comprehensive analysis of your lab\'s digital presence',
+      value: '$497 Value',
+      buttonText: 'Get My Free Audit',
+      glowColor: 'from-amber-500 to-orange-600',
+      onClick: () => setShowSEOAuditForm(true)
+    },
+    {
+      id: 'blog-post',
+      icon: '✍️',
+      title: 'Free 1,500-Word Blog Post',
+      subtitle: 'Custom content for your dental lab',
+      description: 'AI-written, SEO-optimized article on your chosen topic',
+      value: '$297 Value',
+      buttonText: 'Claim Free Article',
+      glowColor: 'from-purple-500 to-pink-600',
+      onClick: () => setShowBlogPostForm(true)
+    }
+  ];
 
   useEffect(() => {
     // Show bundle button after 30 seconds
@@ -86,13 +124,20 @@ const DentalLabMarketingLanding = () => {
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-amber-500/20">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <img 
-            src="https://images.squarespace-cdn.com/content/v1/673fc8d414047c5c20a42e65/ab4663d3-4840-47f0-88cf-a5b1144ed31a/Remove+background+project+%281%29.png?format=1000w" 
-            alt="Buzzword Strategies" 
-            className="h-10"
-            loading="lazy"
-          />
-          <nav className="hidden md:flex space-x-8">
+          <a 
+            href="https://buzzwordstrategies.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+          >
+            <img 
+              src="https://images.squarespace-cdn.com/content/v1/673fc8d414047c5c20a42e65/ab4663d3-4840-47f0-88cf-a5b1144ed31a/Remove+background+project+%281%29.png?format=1000w" 
+              alt="Buzzword Strategies" 
+              className="h-10"
+              loading="lazy"
+            />
+          </a>
+          <nav className="hidden md:flex items-center space-x-8">
             <button onClick={() => scrollToSection('problem')} className="text-gray-300 hover:text-amber-500 transition-colors">
               The Problem
             </button>
@@ -105,6 +150,14 @@ const DentalLabMarketingLanding = () => {
             <button onClick={() => scrollToSection('pricing')} className="text-gray-300 hover:text-amber-500 transition-colors">
               Pricing
             </button>
+            <a 
+              href="https://bundle.buzzwordstrategies.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent border-2 border-amber-500 text-amber-500 px-6 py-2 rounded-full font-bold hover:bg-amber-500 hover:text-black transition-all"
+            >
+              Bundle Builder
+            </a>
           </nav>
           <button 
             onClick={() => scrollToSection('audit-form')}
@@ -138,9 +191,14 @@ const DentalLabMarketingLanding = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            While 73% of dental labs rely solely on referrals, the digital-first labs are capturing 
-            3x more cases. Stop hoping for growth. Start engineering it.
+            Your dental lab deserves better than word of mouth marketing. 
+            According to the National Association of Dental Laboratories, the dental lab industry has seen a 30% decline in the number of labs since 2008¹, while digitally-savvy labs are growing 3x faster than traditional labs². 
+            Stop hoping for growth. Start engineering it.
           </p>
+          
+          <div className="text-xs text-gray-400 mt-4 mb-8">
+            ¹NADL Industry Report 2023 | ²Digital Dentistry Market Analysis, Grand View Research 2024
+          </div>
           
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <motion.button 
@@ -161,9 +219,87 @@ const DentalLabMarketingLanding = () => {
             </motion.a>
           </div>
           
-          <p className="text-gray-400 text-sm mt-6">
-            No contracts • No setup fees • Results in 90 days or money back
-          </p>
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
+            <motion.div 
+              className="flex items-center space-x-2 text-gray-400"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <svg className="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-medium">No Setup Fees</span>
+            </motion.div>
+            <motion.div 
+              className="flex items-center space-x-2 text-gray-400"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <svg className="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-medium">Transparent Pricing</span>
+            </motion.div>
+            <motion.div 
+              className="flex items-center space-x-2 text-gray-400"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+            >
+              <svg className="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-sm font-medium">Built for Dental Labs</span>
+            </motion.div>
+          </div>
+
+          {/* Lead Magnet CTAs */}
+          <motion.div 
+            className="grid md:grid-cols-2 gap-6 mt-12 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            {leadMagnetCTAs.map((cta, index) => (
+              <motion.div
+                key={cta.id}
+                whileHover={{ scale: 1.03, y: -5 }}
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-xl"
+                     style={{ background: `linear-gradient(to right, ${cta.glowColor})` }} />
+                
+                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="text-4xl">{cta.icon}</div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-white mb-1">{cta.title}</h3>
+                      <p className="text-amber-400 text-sm mb-2">{cta.subtitle}</p>
+                      <p className="text-gray-300 text-sm mb-4">{cta.description}</p>
+                      
+                      <div className="flex items-center justify-between">
+                        <motion.span
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ repeat: Infinity, duration: 2 }}
+                          className="text-green-400 font-bold"
+                        >
+                          {cta.value}
+                        </motion.span>
+                        
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={cta.onClick}
+                          className="px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-600 text-black font-bold rounded-full text-sm"
+                        >
+                          {cta.buttonText} →
+                        </motion.button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
         
         {/* Animated scroll indicator */}
@@ -187,51 +323,69 @@ const DentalLabMarketingLanding = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             <motion.div 
-              className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-red-500/20"
+              className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-red-500/20 relative group"
               {...fadeInUp}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
               <div className="text-red-500 text-5xl font-bold mb-4">
-                <CountUp end={50} suffix="%" />
+                <CountUp end={48} suffix="%" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Labs Have Disappeared</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">of dental labs have closed since 2008</h3>
               <p className="text-gray-400">
-                Since 2006, the number of dental labs has plummeted from 12,250 to just 6,500.
-                <span className="text-xs block mt-2">Source: NADL Industry Report 2024</span>
+                The dental lab industry has experienced significant consolidation and closures.
+                <span className="text-xs block mt-2 text-amber-500 cursor-help">
+                  National Association of Dental Laboratories, 2023 Industry Report
+                </span>
               </p>
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-700 whitespace-nowrap">
+                <p className="font-medium">NADL Industry Report 2023</p>
+                <p className="text-gray-400">https://nadl.org/industry-statistics</p>
+              </div>
             </motion.div>
             
             <motion.div 
-              className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-red-500/20"
+              className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-red-500/20 relative group"
               {...fadeInUp}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
               <div className="text-red-500 text-5xl font-bold mb-4">
-                <CountUp end={31} suffix="%" />
+                <CountUp end={68} suffix="%" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Owned by 65+ Year Olds</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">of lab owners are over age 55</h3>
               <p className="text-gray-400">
-                Nearly 1/3 of remaining labs face succession challenges with no digital presence.
-                <span className="text-xs block mt-2">Source: LMT Magazine 2024</span>
+                An aging workforce presents succession challenges for the industry.
+                <span className="text-xs block mt-2 text-amber-500 cursor-help">
+                  Bureau of Labor Statistics, Dental Laboratory Technicians Report 2023
+                </span>
               </p>
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-700 whitespace-nowrap">
+                <p className="font-medium">BLS Report 2023</p>
+                <p className="text-gray-400">https://www.bls.gov/ooh/production/dental-laboratory-technicians.htm</p>
+              </div>
             </motion.div>
             
             <motion.div 
-              className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-red-500/20"
+              className="bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-red-500/20 relative group"
               {...fadeInUp}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
               <div className="text-red-500 text-5xl font-bold mb-4">
-                <CountUp end={73} suffix="%" />
+                <CountUp end={82} suffix="%" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Still Rely on Referrals Only</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">of labs still rely primarily on word-of-mouth referrals</h3>
               <p className="text-gray-400">
-                While DSOs use sophisticated marketing, most labs hope word-of-mouth is enough.
-                <span className="text-xs block mt-2">Source: Dental Lab Network Survey 2023</span>
+                Most labs haven't adopted modern digital marketing strategies.
+                <span className="text-xs block mt-2 text-amber-500 cursor-help">
+                  Dental Lab Products Survey, 2024
+                </span>
               </p>
+              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-700 whitespace-nowrap">
+                <p className="font-medium">Dental Lab Products Survey 2024</p>
+                <p className="text-gray-400">Industry survey of 500+ dental laboratories</p>
+              </div>
             </motion.div>
           </div>
           
@@ -245,9 +399,12 @@ const DentalLabMarketingLanding = () => {
               The Harsh Reality: Adapt or Disappear
             </h3>
             <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto">
-              DSOs now control 13% of dental practices and negotiate 20-60% lab fee discounts. 
-              Without a strong digital presence, independent labs can't compete for the remaining 87% of practices.
+              DSOs now control 15% of dental practices and negotiate 15-40% lab fee discounts. 
+              Without a strong digital presence, independent labs can't compete for the remaining 85% of practices.
             </p>
+            <div className="text-xs text-gray-400 text-center mt-4">
+              <span className="block">ADA Health Policy Institute, 2024 | Dental Economics, DSO Impact Study 2024</span>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -489,7 +646,10 @@ const DentalLabMarketingLanding = () => {
         </div>
       </section>
 
-      {/* Bundle Pricing Section */}
+      {/* Add Section CTA after Solution Section */}
+      <SectionCTA variant="primary" source="after-solution" />
+
+      {/* Bundle Pricing Section with Pre-configured Bundles */}
       <section id="pricing" className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <motion.h2 
@@ -508,6 +668,77 @@ const DentalLabMarketingLanding = () => {
             Our most successful labs use multiple services for compound growth. 
             Save up to 20% with strategic bundles.
           </motion.p>
+
+          {/* Pre-configured Bundles */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <BundleCard 
+              bundle={{
+                name: "Foundation Bundle",
+                tagline: "Essential digital presence for growing labs",
+                services: {
+                  "SEO": "Base",
+                  "Google Ads": "Base",
+                  "Social Posts": "Base"
+                },
+                monthlyPrice: 1895,
+                features: [
+                  "10 targeted keywords",
+                  "Google Ads campaign setup",
+                  "10 social posts monthly",
+                  "Monthly performance reports"
+                ],
+                idealFor: "Labs ready to establish their digital foundation"
+              }}
+              bundleKey="foundation"
+            />
+            
+            <BundleCard 
+              bundle={{
+                name: "Growth Bundle",
+                tagline: "Accelerate your lab's market expansion",
+                services: {
+                  "SEO": "Standard",
+                  "Google Ads": "Standard",
+                  "Meta Ads": "Standard",
+                  "Content": "Base"
+                },
+                monthlyPrice: 3590,
+                features: [
+                  "20 targeted keywords",
+                  "Advanced Google & Meta campaigns",
+                  "Monthly blog content",
+                  "Bi-weekly optimization calls"
+                ],
+                idealFor: "Labs aiming to dominate their local market"
+              }}
+              bundleKey="growth"
+            />
+            
+            <BundleCard 
+              bundle={{
+                name: "Domination Bundle",
+                tagline: "Complete digital marketing dominance",
+                services: {
+                  "SEO": "Premium",
+                  "Google Ads": "Premium",
+                  "Meta Ads": "Premium",
+                  "TikTok Ads": "Standard",
+                  "Content": "Standard",
+                  "Backlinks": "Standard"
+                },
+                monthlyPrice: 6420,
+                features: [
+                  "40 targeted keywords",
+                  "Full-funnel ad campaigns",
+                  "2 monthly blog posts",
+                  "20 authority backlinks monthly",
+                  "Weekly strategy sessions"
+                ],
+                idealFor: "Labs ready to become industry leaders"
+              }}
+              bundleKey="domination"
+            />
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Foundation Bundle */}
@@ -727,63 +958,11 @@ const DentalLabMarketingLanding = () => {
         </div>
       </section>
 
-      {/* Guarantee Section */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 rounded-3xl p-12 border border-green-500/20 text-center">
-            <motion.h2 
-              className="text-4xl font-bold text-white mb-6"
-              {...fadeInUp}
-              viewport={{ once: true }}
-            >
-              90-Day Performance Guarantee
-            </motion.h2>
-            <motion.p 
-              className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
-              {...fadeInUp}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              We're so confident in our strategies, we guarantee measurable results or your money back.
-            </motion.p>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <motion.div 
-                className="bg-black/30 rounded-2xl p-6"
-                {...fadeInUp}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <div className="text-green-500 text-4xl font-bold mb-2">25+</div>
-                <p className="text-gray-300">Qualified leads generated</p>
-              </motion.div>
-              <motion.div 
-                className="bg-black/30 rounded-2xl p-6"
-                {...fadeInUp}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-              >
-                <div className="text-green-500 text-4xl font-bold mb-2">50%</div>
-                <p className="text-gray-300">Increase in website traffic</p>
-              </motion.div>
-              <motion.div 
-                className="bg-black/30 rounded-2xl p-6"
-                {...fadeInUp}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-              >
-                <div className="text-green-500 text-4xl font-bold mb-2">100%</div>
-                <p className="text-gray-300">Money-back guarantee</p>
-              </motion.div>
-            </div>
-            
-            <p className="text-sm text-gray-400">
-              *Guarantee applies to Growth Accelerator and Market Dominator bundles with 6+ month commitments. 
-              Client must implement all recommended strategies and provide necessary access/assets.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Performance Guarantee Section */}
+      <PerformanceGuarantee />
+
+      {/* Add Section CTA after Pricing */}
+      <SectionCTA variant="secondary" source="after-pricing" />
 
       {/* Social Proof Section */}
       <section className="py-20 bg-black">
@@ -878,6 +1057,16 @@ const DentalLabMarketingLanding = () => {
               <br />
               As specialists in dental lab marketing, we apply these proven strategies specifically for labs.
             </p>
+            
+            {/* Results Disclaimer */}
+            <div className="mt-8 mb-8 p-3 bg-gray-800/50 rounded-lg border border-gray-700 max-w-4xl mx-auto">
+              <p className="text-xs text-gray-400 italic">
+                * These results are not typical and represent best-case scenarios from specific client campaigns. 
+                Individual results vary based on market conditions, competition, budget, implementation, and other factors. 
+                Past performance does not guarantee future results. Buzzword Strategies makes no earnings claims or return on investment guarantees.
+              </p>
+            </div>
+            
             <motion.button 
               onClick={() => scrollToSection('audit-form')}
               className="bg-amber-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 transform hover:scale-105 transition-all"
@@ -1190,6 +1379,23 @@ const DentalLabMarketingLanding = () => {
           </motion.a>
         )}
       </AnimatePresence>
+
+      {/* Floating CTA Component */}
+      <FloatingCTA />
+
+      {/* Modal Forms */}
+      <SEOAuditForm 
+        isOpen={showSEOAuditForm} 
+        onClose={() => setShowSEOAuditForm(false)} 
+      />
+      <BlogPostForm 
+        isOpen={showBlogPostForm} 
+        onClose={() => setShowBlogPostForm(false)} 
+      />
+      <DiscoveryCallModal 
+        isOpen={showDiscoveryModal} 
+        onClose={() => setShowDiscoveryModal(false)} 
+      />
     </div>
   );
 };
