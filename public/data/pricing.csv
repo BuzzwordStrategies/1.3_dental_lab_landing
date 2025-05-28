@@ -1,0 +1,25 @@
+Service,Tier,Base + Markup (Rounded),Subscription Length,Subscription Discount %,# Products in Bundle,Bundle Discount %,Final Monthly Price After Discounts,Monthly Savings,Logo Name,Logo URL,Feature Line 1,Feature Line 2,Feature Line 3
+Social Posts,Base,315,3,5,1,0,299.25,15.75,social_base,/images/logos/social_base.png,1 post/week,10/month,1 channel
+Social Posts,Standard,525,3,5,1,0,498.75,26.25,social_standard,/images/logos/social_standard.png,3 posts/week,12/month,2 channels
+Social Posts,Premium,840,3,5,1,0,798,42,social_premium,/images/logos/social_premium.png,5 posts/week,15/month,3 channels
+Content,Base,420,3,5,1,0,399,21,content_base,/images/logos/content_base.png,2 blogs/month,SEO optimized,Basic research
+Content,Standard,630,3,5,1,0,598.5,31.5,content_standard,/images/logos/content_standard.png,4 blogs/month,Advanced SEO,Industry research
+Content,Premium,945,3,5,1,0,897.75,47.25,content_premium,/images/logos/content_premium.png,6 blogs/month,Premium SEO,Expert research
+Backlinks,Base,525,3,5,1,0,498.75,26.25,backlinks_base,/images/logos/backlinks_base.png,10 backlinks/month,DR 30+ sites,Basic outreach
+Backlinks,Standard,735,3,5,1,0,698.25,36.75,backlinks_standard,/images/logos/backlinks_standard.png,20 backlinks/month,DR 50+ sites,Advanced outreach
+Backlinks,Premium,1050,3,5,1,0,997.5,52.5,backlinks_premium,/images/logos/backlinks_premium.png,30 backlinks/month,DR 70+ sites,Premium outreach
+GBP Ranker,Base,315,3,5,1,0,299.25,15.75,gbp_base,/images/logos/gbp_base.png,Local SEO,GMB optimization,Review management
+GBP Ranker,Standard,525,3,5,1,0,498.75,26.25,gbp_standard,/images/logos/gbp_standard.png,Advanced local SEO,Multi-location,Citation building
+GBP Ranker,Premium,735,3,5,1,0,698.25,36.75,gbp_premium,/images/logos/gbp_premium.png,Premium local SEO,Reputation management,Local link building
+SEO,Base,630,3,5,1,0,598.5,31.5,seo_base,/images/logos/seo_base.png,Technical SEO,Keyword research,Monthly reports
+SEO,Standard,945,3,5,1,0,897.75,47.25,seo_standard,/images/logos/seo_standard.png,Advanced SEO,Competitor analysis,Bi-weekly reports
+SEO,Premium,1260,3,5,1,0,1197,63,seo_premium,/images/logos/seo_premium.png,Enterprise SEO,Custom strategy,Weekly reports
+TikTok Ads,Base,735,3,5,1,0,698.25,36.75,tiktok_base,/images/logos/tiktok_base.png,Campaign setup,Creative testing,Basic targeting
+TikTok Ads,Standard,1050,3,5,1,0,997.5,52.5,tiktok_standard,/images/logos/tiktok_standard.png,Advanced campaigns,A/B testing,Audience research
+TikTok Ads,Premium,1365,3,5,1,0,1296.75,68.25,tiktok_premium,/images/logos/tiktok_premium.png,Premium campaigns,Custom creatives,Advanced analytics
+Google Ads,Base,840,3,5,1,0,798,42,google_base,/images/logos/google_base.png,Search campaigns,Keyword targeting,Basic optimization
+Google Ads,Standard,1155,3,5,1,0,1097.25,57.75,google_standard,/images/logos/google_standard.png,Search + Display,Advanced targeting,Conversion tracking
+Google Ads,Premium,1470,3,5,1,0,1396.5,73.5,google_premium,/images/logos/google_premium.png,Full campaign suite,Custom audiences,Advanced analytics
+Meta Ads,Base,735,3,5,1,0,698.25,36.75,meta_base,/images/logos/meta_base.png,Facebook campaigns,Basic targeting,Creative testing
+Meta Ads,Standard,1050,3,5,1,0,997.5,52.5,meta_standard,/images/logos/meta_standard.png,Facebook + Instagram,Advanced targeting,Lookalike audiences
+Meta Ads,Premium,1365,3,5,1,0,1296.75,68.25,meta_premium,/images/logos/meta_premium.png,Full Meta suite,Custom audiences,Advanced optimization

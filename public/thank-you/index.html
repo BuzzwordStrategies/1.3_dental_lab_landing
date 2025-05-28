@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Redirecting to Payment</title>
+  <script>
+    window.onload = function() {
+      // Just redirect directly to our Netlify function with all params
+      window.location.href = `/.netlify/functions/create-stripe-checkout${window.location.search}`;
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1A1A1A;
+      color: white;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+      background-color: #2A2A2A;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      border: 1px solid #FFBA38;
+    }
+    h1 {
+      color: #FFBA38;
+    }
+    p {
+      color: #F8F6F0;
+      line-height: 1.6;
+    }
+    .loader {
+      border: 5px solid #2A2A2A;
+      border-top: 5px solid #FFBA38;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Agreement Signed Successfully!</h1>
+    <p>Redirecting to payment...</p>
+    <div class="loader"></div>
+  </div>
+</body>
+</html>
