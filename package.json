@@ -42,6 +42,7 @@
     "react-hot-toast": "^2.5.2",
     "react-intersection-observer": "^9.16.0",
     "react-parallax-tilt": "^1.7.296",
+    "react-router-dom": "^7.6.1",
     "react-scripts": "5.0.1",
     "react-spring": "^10.0.1",
     "react-typed": "^2.0.12",

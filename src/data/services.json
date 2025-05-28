@@ -1,0 +1,233 @@
+{
+  "products": [
+    "Meta Ads", "Google Ads", "TikTok Ads", "SEO",
+    "GBP Ranker", "Backlinks", "Content", "Social Posts"
+  ],
+  "pricing": {
+    "Meta Ads": { "Base": 735, "Standard": 1050, "Premium": 1365 },
+    "Google Ads": { "Base": 840, "Standard": 1155, "Premium": 1470 },
+    "TikTok Ads": { "Base": 735, "Standard": 1050, "Premium": 1365 },
+    "SEO": { "Base": 630, "Standard": 945, "Premium": 1260 },
+    "GBP Ranker": { "Base": 315, "Standard": 525, "Premium": 735 },
+    "Backlinks": { "Base": 525, "Standard": 735, "Premium": 1050 },
+    "Content": { "Base": 420, "Standard": 630, "Premium": 945 },
+    "Social Posts": { "Base": 315, "Standard": 525, "Premium": 840 }
+  },
+  "services": [
+    {
+      "id": "meta-ads",
+      "name": "Meta Ads Management",
+      "description": "Facebook and Instagram advertising campaigns",
+      "icon": "📘",
+      "colorTheme": "blue",
+      "tiers": [
+        {
+          "name": "Base",
+          "price": 735,
+          "features": ["Facebook campaigns", "Basic targeting", "Creative testing"]
+        },
+        {
+          "name": "Standard",
+          "price": 1050,
+          "features": ["Facebook + Instagram", "Advanced targeting", "Lookalike audiences"]
+        },
+        {
+          "name": "Premium",
+          "price": 1365,
+          "features": ["Full Meta suite", "Custom audiences", "Advanced optimization"]
+        }
+      ]
+    },
+    {
+      "id": "google-ads",
+      "name": "Google Ads Management",
+      "description": "Strategic Google advertising campaigns",
+      "icon": "🎯",
+      "colorTheme": "yellow",
+      "tiers": [
+        {
+          "name": "Base",
+          "price": 840,
+          "features": ["Search campaigns", "Keyword targeting", "Basic optimization"]
+        },
+        {
+          "name": "Standard",
+          "price": 1155,
+          "features": ["Search + Display", "Advanced targeting", "Conversion tracking"]
+        },
+        {
+          "name": "Premium",
+          "price": 1470,
+          "features": ["Full campaign suite", "Custom audiences", "Advanced analytics"]
+        }
+      ]
+    },
+    {
+      "id": "tiktok-ads",
+      "name": "TikTok Ads Management",
+      "description": "Creative TikTok advertising campaigns",
+      "icon": "🎵",
+      "colorTheme": "pink",
+      "tiers": [
+        {
+          "name": "Base",
+          "price": 735,
+          "features": ["Campaign setup", "Creative testing", "Basic targeting"]
+        },
+        {
+          "name": "Standard",
+          "price": 1050,
+          "features": ["Advanced campaigns", "A/B testing", "Audience research"]
+        },
+        {
+          "name": "Premium",
+          "price": 1365,
+          "features": ["Premium campaigns", "Custom creatives", "Advanced analytics"]
+        }
+      ]
+    },
+    {
+      "id": "seo",
+      "name": "SEO Optimization",
+      "description": "Comprehensive search engine optimization services",
+      "icon": "🔍",
+      "colorTheme": "orange",
+      "tiers": [
+        {
+          "name": "Base",
+          "price": 630,
+          "features": ["Technical SEO", "Keyword research", "Monthly reports"]
+        },
+        {
+          "name": "Standard",
+          "price": 945,
+          "features": ["Advanced SEO", "Competitor analysis", "Bi-weekly reports"]
+        },
+        {
+          "name": "Premium",
+          "price": 1260,
+          "features": ["Enterprise SEO", "Custom strategy", "Weekly reports"]
+        }
+      ]
+    },
+    {
+      "id": "gbp-ranker",
+      "name": "GBP Ranker",
+      "description": "Google Business Profile optimization and local SEO",
+      "icon": "📍",
+      "colorTheme": "red",
+      "tiers": [
+        {
+          "name": "Base",
+          "price": 315,
+          "features": ["Local SEO", "GMB optimization", "Review management"]
+        },
+        {
+          "name": "Standard",
+          "price": 525,
+          "features": ["Advanced local SEO", "Multi-location", "Citation building"]
+        },
+        {
+          "name": "Premium",
+          "price": 735,
+          "features": ["Premium local SEO", "Reputation management", "Local link building"]
+        }
+      ]
+    },
+    {
+      "id": "backlinks",
+      "name": "Backlinks",
+      "description": "High-quality backlink acquisition from dental industry sites",
+      "icon": "🔗",
+      "colorTheme": "purple",
+      "tiers": [
+        {
+          "name": "Base",
+          "price": 525,
+          "features": ["10 backlinks/month", "DR 30+ sites", "Basic outreach"]
+        },
+        {
+          "name": "Standard",
+          "price": 735,
+          "features": ["20 backlinks/month", "DR 50+ sites", "Advanced outreach"]
+        },
+        {
+          "name": "Premium",
+          "price": 1050,
+          "features": ["30 backlinks/month", "DR 70+ sites", "Premium outreach"]
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "name": "Content Creation",
+      "description": "SEO-optimized blog posts and website content",
+      "icon": "✍️",
+      "colorTheme": "green",
+      "tiers": [
+        {
+          "name": "Base",
+          "price": 420,
+          "features": ["2 blogs/month", "SEO optimized", "Basic research"]
+        },
+        {
+          "name": "Standard",
+          "price": 630,
+          "features": ["4 blogs/month", "Advanced SEO", "Industry research"]
+        },
+        {
+          "name": "Premium",
+          "price": 945,
+          "features": ["6 blogs/month", "Premium SEO", "Expert research"]
+        }
+      ]
+    },
+    {
+      "id": "social-posts",
+      "name": "Social Posts",
+      "description": "Professional social media content creation and management",
+      "icon": "📱",
+      "colorTheme": "blue",
+      "tiers": [
+        {
+          "name": "Base",
+          "price": 315,
+          "features": ["1 post/week", "10/month", "1 channel"],
+          "postsPerWeek": 1
+        },
+        {
+          "name": "Standard",
+          "price": 525,
+          "features": ["3 posts/week", "12/month", "2 channels"],
+          "postsPerWeek": 3
+        },
+        {
+          "name": "Premium",
+          "price": 840,
+          "features": ["5 posts/week", "15/month", "3 channels"],
+          "postsPerWeek": 5
+        }
+      ]
+    }
+  ],
+  "freeResources": [
+    {
+      "id": "seo-audit",
+      "title": "Get Your Free SEO Audit",
+      "description": "Discover exactly where your dental lab stands online and what's holding you back from attracting more dentists.",
+      "icon": "🔍"
+    },
+    {
+      "id": "competitor-analysis",
+      "title": "Get Your Free Competitor Analysis",
+      "description": "See how your lab stacks up against local competitors and uncover opportunities they're missing.",
+      "icon": "📊"
+    },
+    {
+      "id": "custom-blog-post",
+      "title": "Get Your Free Custom Blog Post",
+      "description": "Receive a professionally written, SEO-optimized blog post tailored specifically for your dental laboratory.",
+      "icon": "✍️"
+    }
+  ]
+}

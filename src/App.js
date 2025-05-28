@@ -1,17 +1,31 @@
-import React from 'react';
-import { DataProvider } from './contexts/DataContext';
-import ImmersiveDentalLabLanding from './pages/ImmersiveDentalLabLanding';
-import './styles/glassmorphism.css';
-import './styles/animations.css';
-import './styles/immersive.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import BundleBuilderLanding from './pages/BundleBuilderLanding';
+import DentalLabMarketingLanding from './pages/DentalLabMarketingLanding';
+import './themes/light.css';
+import './themes/dark.css';
+import './components/Card.css';
 
 function App() {
+  useEffect(() => {
+    // Set initial theme based on system preference or localStorage
+    const savedTheme = localStorage.getItem('theme');
+    const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const initialTheme = savedTheme || systemPreference;
+    
+    document.documentElement.classList.add(`theme-${initialTheme}`);
+  }, []);
+
   return (
-    <DataProvider>
+    <Router>
       <div className="App">
-        <ImmersiveDentalLabLanding />
+        <Routes>
+          <Route path="/" element={<Navigate to="/dental-lab" replace />} />
+          <Route path="/bundle-builder" element={<BundleBuilderLanding />} />
+          <Route path="/dental-lab" element={<DentalLabMarketingLanding />} />
+        </Routes>
       </div>
-    </DataProvider>
+    </Router>
   );
 }
 

@@ -1,0 +1,85 @@
+.theme-dark {
+  --bg-primary: #000000;
+  --bg-secondary: #111827;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db;
+  --accent: #f59e0b;
+  --card-bg: rgba(255,255,255,.08);
+  --card-border: rgba(255,255,255,.1);
+  --card-highlight: rgba(255,255,255,.1);
+  --card-shadow-inset: rgba(0,0,0,.05);
+}
+
+/* Base styles for dark theme */
+.theme-dark body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.theme-dark .card {
+  position: relative;
+  padding: 2rem;
+  border-radius: var(--radius-card);
+  background: var(--card-bg);
+  backdrop-filter: blur(var(--blur-strength));
+  -webkit-backdrop-filter: blur(var(--blur-strength));
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-thickness-shadow),
+              inset 0 1px 0 var(--card-highlight),
+              inset 0 -1px 0 var(--card-shadow-inset);
+  overflow: hidden;
+}
+
+.theme-dark .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* 3-D tilt on hover (prefers-reduced-motion respected) */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .theme-dark .card:hover {
+    transform: perspective(900px) rotateX(4deg) rotateY(-6deg) translateZ(15px);
+    transition: transform .5s cubic-bezier(.25,.1,.25,1);
+  }
+}
+
+/* Focus styles for accessibility */
+.theme-dark *:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Service card accent border */
+.theme-dark .service-card {
+  border-top: 3px solid;
+  border-image: linear-gradient(to right, var(--accent), transparent) 1;
+}
+
+/* Button styles */
+.theme-dark .btn-primary {
+  background: var(--accent);
+  color: #000000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-dark .btn-primary:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+/* Text styles */
+.theme-dark .text-secondary {
+  color: var(--text-secondary);
+}
+
+.theme-dark .text-accent {
+  color: var(--accent);
+}
