@@ -1,0 +1,703 @@
+{
+  "metadata": {
+    "auditDate": "2025-05-29",
+    "totalComponents": 89,
+    "componentsByType": {
+      "pages": 6,
+      "landing": 23,
+      "forms": 4,
+      "three": 6,
+      "ui": 8,
+      "sections": 7,
+      "effects": 3,
+      "icons": 2,
+      "tools": 4,
+      "core": 26
+    }
+  },
+  "components": {
+    "pages": [
+      {
+        "name": "App.js",
+        "path": "src/App.js",
+        "type": "Entry Point",
+        "dependencies": ["DentalLabLanding", "globals.css"],
+        "stateManagement": "None",
+        "reusabilityScore": 1,
+        "complexity": "Low",
+        "props": [],
+        "hooks": [],
+        "notes": "Simple entry point, routes to main landing page"
+      },
+      {
+        "name": "DentalLabLanding.js",
+        "path": "src/pages/DentalLabLanding.js",
+        "type": "Page Component",
+        "dependencies": ["Hero", "PainPoints", "ServicesShowcase", "BundlePreview", "SocialProof", "LeadCapture", "Footer", "tracking"],
+        "stateManagement": "useState (scrollY)",
+        "reusabilityScore": 2,
+        "complexity": "Medium",
+        "props": [],
+        "hooks": ["useState", "useEffect"],
+        "notes": "Main landing page with scroll tracking"
+      },
+      {
+        "name": "BundleBuilderLanding.jsx",
+        "path": "src/pages/BundleBuilderLanding.jsx",
+        "type": "Page Component",
+        "dependencies": ["BundleBuilder"],
+        "stateManagement": "Delegated",
+        "reusabilityScore": 1,
+        "complexity": "Low",
+        "props": [],
+        "hooks": [],
+        "notes": "Wrapper for bundle builder functionality"
+      },
+      {
+        "name": "DentalLabMarketingLanding.js",
+        "path": "src/pages/DentalLabMarketingLanding.js",
+        "type": "Page Component",
+        "dependencies": ["Multiple landing components"],
+        "stateManagement": "Complex",
+        "reusabilityScore": 1,
+        "complexity": "High",
+        "props": [],
+        "hooks": ["useState", "useEffect", "useCallback"],
+        "notes": "Alternative landing page with different layout"
+      },
+      {
+        "name": "ImmersiveDentalLabLanding.js",
+        "path": "src/pages/ImmersiveDentalLabLanding.js",
+        "type": "Page Component",
+        "dependencies": ["Three.js components", "immersive styles"],
+        "stateManagement": "Complex",
+        "reusabilityScore": 1,
+        "complexity": "High",
+        "props": [],
+        "hooks": ["useState", "useEffect"],
+        "notes": "3D immersive landing page experience"
+      },
+      {
+        "name": "MarketingLandingPage.js",
+        "path": "src/pages/MarketingLandingPage.js",
+        "type": "Page Component",
+        "dependencies": ["Marketing-focused components"],
+        "stateManagement": "Medium",
+        "reusabilityScore": 1,
+        "complexity": "Medium",
+        "props": [],
+        "hooks": ["useState"],
+        "notes": "Marketing-focused landing page variant"
+      },
+      {
+        "name": "TestDentalLab.js",
+        "path": "src/pages/TestDentalLab.js",
+        "type": "Test Page",
+        "dependencies": ["Various test components"],
+        "stateManagement": "Minimal",
+        "reusabilityScore": 1,
+        "complexity": "Low",
+        "props": [],
+        "hooks": [],
+        "notes": "Test page for development purposes"
+      }
+    ],
+    "coreComponents": [
+      {
+        "name": "BundleBuilder.js",
+        "path": "src/components/BundleBuilder.js",
+        "type": "Business Logic Component",
+        "dependencies": ["UserInfoForm", "ContractAgreementForm", "Supabase", "Stripe"],
+        "stateManagement": "Complex (useState, useEffect, useCallback)",
+        "reusabilityScore": 2,
+        "complexity": "Very High",
+        "props": [],
+        "hooks": ["useState", "useEffect", "useCallback", "useRef", "useMemo"],
+        "notes": "Main bundle builder with pricing logic, payment flow, and order management. 1000+ lines, needs refactoring",
+        "issues": ["Too large", "Multiple responsibilities", "Hardcoded business logic"]
+      },
+      {
+        "name": "Card.jsx",
+        "path": "src/components/Card.jsx",
+        "type": "UI Component",
+        "dependencies": ["Card.css"],
+        "stateManagement": "None",
+        "reusabilityScore": 5,
+        "complexity": "Low",
+        "props": ["children", "className", "onClick"],
+        "hooks": [],
+        "notes": "Generic reusable card component"
+      },
+      {
+        "name": "ThemeToggle.jsx",
+        "path": "src/components/ThemeToggle.jsx",
+        "type": "UI Component",
+        "dependencies": ["Theme context"],
+        "stateManagement": "Context",
+        "reusabilityScore": 4,
+        "complexity": "Low",
+        "props": ["theme", "toggleTheme"],
+        "hooks": [],
+        "notes": "Theme switching component"
+      },
+      {
+        "name": "ServiceCard.jsx",
+        "path": "src/components/ServiceCard.jsx",
+        "type": "Display Component",
+        "dependencies": ["Service data"],
+        "stateManagement": "None",
+        "reusabilityScore": 4,
+        "complexity": "Medium",
+        "props": ["service", "onSelect", "isSelected"],
+        "hooks": [],
+        "notes": "Service display card with selection state"
+      },
+      {
+        "name": "DiscountSlider.jsx",
+        "path": "src/components/DiscountSlider.jsx",
+        "type": "Input Component",
+        "dependencies": ["Pricing logic"],
+        "stateManagement": "Controlled",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["value", "onChange", "min", "max"],
+        "hooks": [],
+        "notes": "Subscription length slider with discount calculation"
+      },
+      {
+        "name": "FreebieCard.jsx",
+        "path": "src/components/FreebieCard.jsx",
+        "type": "Display Component",
+        "dependencies": ["Lead magnet data"],
+        "stateManagement": "None",
+        "reusabilityScore": 3,
+        "complexity": "Low",
+        "props": ["title", "description", "downloadUrl"],
+        "hooks": [],
+        "notes": "Lead magnet display card"
+      }
+    ],
+    "landingComponents": [
+      {
+        "name": "NavigationHeader.js",
+        "path": "src/components/landing/NavigationHeader.js",
+        "type": "Layout Component",
+        "dependencies": ["Logo assets", "Navigation data"],
+        "stateManagement": "useState (mobile menu)",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["transparent", "fixed"],
+        "hooks": ["useState"],
+        "notes": "Main navigation header with mobile responsiveness"
+      },
+      {
+        "name": "Footer.js",
+        "path": "src/components/landing/Footer.js",
+        "type": "Layout Component",
+        "dependencies": ["Company data", "Legal links"],
+        "stateManagement": "None",
+        "reusabilityScore": 3,
+        "complexity": "Low",
+        "props": [],
+        "hooks": [],
+        "notes": "Site footer with links and legal information"
+      },
+      {
+        "name": "CTASection.js",
+        "path": "src/components/landing/CTASection.js",
+        "type": "Conversion Component",
+        "dependencies": ["Calendly integration"],
+        "stateManagement": "None",
+        "reusabilityScore": 4,
+        "complexity": "Low",
+        "props": ["title", "description", "buttonText"],
+        "hooks": [],
+        "notes": "Call-to-action section with Calendly integration"
+      },
+      {
+        "name": "BundleCard.js",
+        "path": "src/components/landing/BundleCard.js",
+        "type": "Product Component",
+        "dependencies": ["Pricing data", "Service data"],
+        "stateManagement": "None",
+        "reusabilityScore": 4,
+        "complexity": "Medium",
+        "props": ["bundle", "onSelect", "isPopular"],
+        "hooks": [],
+        "notes": "Bundle display card with pricing and features"
+      },
+      {
+        "name": "EnhancedBundleCard.js",
+        "path": "src/components/landing/EnhancedBundleCard.js",
+        "type": "Product Component",
+        "dependencies": ["Pricing data", "Animation libraries"],
+        "stateManagement": "useState (hover effects)",
+        "reusabilityScore": 3,
+        "complexity": "High",
+        "props": ["bundle", "onSelect", "enhanced"],
+        "hooks": ["useState", "useEffect"],
+        "notes": "Enhanced bundle card with animations and interactions"
+      },
+      {
+        "name": "DiscoveryCallCTA.js",
+        "path": "src/components/landing/DiscoveryCallCTA.js",
+        "type": "Conversion Component",
+        "dependencies": ["Calendly"],
+        "stateManagement": "None",
+        "reusabilityScore": 4,
+        "complexity": "Low",
+        "props": ["variant", "size"],
+        "hooks": [],
+        "notes": "Discovery call CTA button"
+      },
+      {
+        "name": "DiscoveryCallModal.js",
+        "path": "src/components/landing/DiscoveryCallModal.js",
+        "type": "Modal Component",
+        "dependencies": ["Calendly widget"],
+        "stateManagement": "useState (modal state)",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["isOpen", "onClose"],
+        "hooks": ["useState", "useEffect"],
+        "notes": "Modal with embedded Calendly widget"
+      },
+      {
+        "name": "FloatingCTA.js",
+        "path": "src/components/landing/FloatingCTA.js",
+        "type": "Conversion Component",
+        "dependencies": ["Scroll tracking"],
+        "stateManagement": "useState (visibility)",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["scrollThreshold"],
+        "hooks": ["useState", "useEffect"],
+        "notes": "Floating CTA that appears on scroll"
+      },
+      {
+        "name": "SocialProofSection.js",
+        "path": "src/components/landing/SocialProofSection.js",
+        "type": "Trust Component",
+        "dependencies": ["Testimonial data", "Logo assets"],
+        "stateManagement": "None",
+        "reusabilityScore": 4,
+        "complexity": "Medium",
+        "props": ["testimonials", "logos"],
+        "hooks": [],
+        "notes": "Social proof with testimonials and client logos"
+      },
+      {
+        "name": "TestimonialsCarousel.js",
+        "path": "src/components/landing/TestimonialsCarousel.js",
+        "type": "Display Component",
+        "dependencies": ["Testimonial data", "Carousel library"],
+        "stateManagement": "useState (current slide)",
+        "reusabilityScore": 4,
+        "complexity": "Medium",
+        "props": ["testimonials", "autoPlay"],
+        "hooks": ["useState", "useEffect"],
+        "notes": "Animated testimonials carousel"
+      },
+      {
+        "name": "FAQSection.js",
+        "path": "src/components/landing/FAQSection.js",
+        "type": "Content Component",
+        "dependencies": ["FAQ data"],
+        "stateManagement": "useState (expanded items)",
+        "reusabilityScore": 4,
+        "complexity": "Medium",
+        "props": ["faqs"],
+        "hooks": ["useState"],
+        "notes": "Expandable FAQ section"
+      },
+      {
+        "name": "DentalLabStats.js",
+        "path": "src/components/landing/DentalLabStats.js",
+        "type": "Display Component",
+        "dependencies": ["CountUp component", "Stats data"],
+        "stateManagement": "None",
+        "reusabilityScore": 3,
+        "complexity": "Low",
+        "props": ["stats"],
+        "hooks": [],
+        "notes": "Animated statistics display"
+      },
+      {
+        "name": "ServicesShowcase.js",
+        "path": "src/components/landing/ServicesShowcase.js",
+        "type": "Product Component",
+        "dependencies": ["Service data", "ServiceIcon"],
+        "stateManagement": "useState (selected service)",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["services"],
+        "hooks": ["useState"],
+        "notes": "Interactive services showcase"
+      },
+      {
+        "name": "PreBuiltBundles.js",
+        "path": "src/components/landing/PreBuiltBundles.js",
+        "type": "Product Component",
+        "dependencies": ["Bundle data", "BundleCard"],
+        "stateManagement": "None",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["bundles"],
+        "hooks": [],
+        "notes": "Pre-configured bundle showcase"
+      },
+      {
+        "name": "LeadMagnetSection.js",
+        "path": "src/components/landing/LeadMagnetSection.js",
+        "type": "Conversion Component",
+        "dependencies": ["Lead magnet data", "Form components"],
+        "stateManagement": "useState (form state)",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["leadMagnets"],
+        "hooks": ["useState"],
+        "notes": "Lead magnet download section"
+      },
+      {
+        "name": "PerformanceGuarantee.js",
+        "path": "src/components/landing/PerformanceGuarantee.js",
+        "type": "Trust Component",
+        "dependencies": ["Guarantee data"],
+        "stateManagement": "None",
+        "reusabilityScore": 4,
+        "complexity": "Low",
+        "props": ["guarantee"],
+        "hooks": [],
+        "notes": "Performance guarantee display"
+      },
+      {
+        "name": "ResultsDisclaimer.js",
+        "path": "src/components/landing/ResultsDisclaimer.js",
+        "type": "Legal Component",
+        "dependencies": ["Legal text"],
+        "stateManagement": "None",
+        "reusabilityScore": 4,
+        "complexity": "Low",
+        "props": ["disclaimerText"],
+        "hooks": [],
+        "notes": "Results disclaimer for legal compliance"
+      },
+      {
+        "name": "EnhancedResultsDisclaimer.js",
+        "path": "src/components/landing/EnhancedResultsDisclaimer.js",
+        "type": "Legal Component",
+        "dependencies": ["Legal text", "Modal"],
+        "stateManagement": "useState (modal state)",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["disclaimerText", "enhanced"],
+        "hooks": ["useState"],
+        "notes": "Enhanced disclaimer with modal view"
+      }
+    ],
+    "threeJsComponents": [
+      {
+        "name": "FloatingDentalModels.js",
+        "path": "src/components/three/FloatingDentalModels.js",
+        "type": "3D Component",
+        "dependencies": ["@react-three/fiber", "@react-three/drei", "three"],
+        "stateManagement": "useRef (mesh references)",
+        "reusabilityScore": 2,
+        "complexity": "High",
+        "props": [],
+        "hooks": ["useRef", "useMemo", "useFrame"],
+        "notes": "3D floating dental models with animations"
+      },
+      {
+        "name": "Glass3DPanel.js",
+        "path": "src/components/three/Glass3DPanel.js",
+        "type": "3D Component",
+        "dependencies": ["@react-three/fiber", "three"],
+        "stateManagement": "useRef",
+        "reusabilityScore": 3,
+        "complexity": "High",
+        "props": ["opacity", "color"],
+        "hooks": ["useRef", "useFrame"],
+        "notes": "3D glass panel effect"
+      },
+      {
+        "name": "FloatingTooth.js",
+        "path": "src/components/three/FloatingTooth.js",
+        "type": "3D Component",
+        "dependencies": ["@react-three/fiber", "three"],
+        "stateManagement": "useRef",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["position", "scale"],
+        "hooks": ["useRef", "useFrame"],
+        "notes": "Single floating tooth model"
+      },
+      {
+        "name": "BundleBuilder3D.js",
+        "path": "src/components/three/BundleBuilder3D.js",
+        "type": "3D Component",
+        "dependencies": ["@react-three/fiber", "Bundle data"],
+        "stateManagement": "Complex",
+        "reusabilityScore": 1,
+        "complexity": "Very High",
+        "props": ["selectedServices", "onServiceSelect"],
+        "hooks": ["useRef", "useState", "useFrame"],
+        "notes": "3D bundle builder interface"
+      },
+      {
+        "name": "DataVisualization.js",
+        "path": "src/components/three/DataVisualization.js",
+        "type": "3D Component",
+        "dependencies": ["@react-three/fiber", "Chart data"],
+        "stateManagement": "useState",
+        "reusabilityScore": 2,
+        "complexity": "High",
+        "props": ["data", "type"],
+        "hooks": ["useState", "useEffect", "useRef"],
+        "notes": "3D data visualization component"
+      },
+      {
+        "name": "Hero3D.js",
+        "path": "src/components/landing/Hero3D.js",
+        "type": "3D Component",
+        "dependencies": ["@react-three/fiber", "Hero content"],
+        "stateManagement": "useRef",
+        "reusabilityScore": 2,
+        "complexity": "High",
+        "props": ["heroData"],
+        "hooks": ["useRef", "useFrame"],
+        "notes": "3D hero section background"
+      }
+    ],
+    "formComponents": [
+      {
+        "name": "UserInfoForm.js",
+        "path": "src/components/UserInfoForm.js",
+        "type": "Form Component",
+        "dependencies": ["react-hook-form"],
+        "stateManagement": "react-hook-form",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["onSubmit", "onCancel"],
+        "hooks": ["useForm"],
+        "notes": "User information collection form"
+      },
+      {
+        "name": "ContractAgreementForm.js",
+        "path": "src/components/ContractAgreementForm.js",
+        "type": "Form Component",
+        "dependencies": ["react-hook-form", "Legal validation"],
+        "stateManagement": "react-hook-form",
+        "reusabilityScore": 2,
+        "complexity": "High",
+        "props": ["onSubmit", "bundleData"],
+        "hooks": ["useForm", "useState"],
+        "notes": "Contract agreement form with legal validation"
+      },
+      {
+        "name": "SEOAuditForm.js",
+        "path": "src/components/forms/SEOAuditForm.js",
+        "type": "Lead Form",
+        "dependencies": ["Webhook service"],
+        "stateManagement": "useState",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["onSubmit"],
+        "hooks": ["useState"],
+        "notes": "SEO audit request form"
+      },
+      {
+        "name": "BlogPostForm.js",
+        "path": "src/components/forms/BlogPostForm.js",
+        "type": "Lead Form",
+        "dependencies": ["Webhook service"],
+        "stateManagement": "useState",
+        "reusabilityScore": 3,
+        "complexity": "Medium",
+        "props": ["onSubmit"],
+        "hooks": ["useState"],
+        "notes": "Blog post request form"
+      }
+    ],
+    "utilityComponents": [
+      {
+        "name": "CountUp.js",
+        "path": "src/components/ui/CountUp.js",
+        "type": "Animation Component",
+        "dependencies": ["Intersection Observer"],
+        "stateManagement": "useState",
+        "reusabilityScore": 5,
+        "complexity": "Medium",
+        "props": ["end", "duration", "prefix", "suffix"],
+        "hooks": ["useState", "useEffect", "useRef"],
+        "notes": "Animated counter with intersection observer"
+      },
+      {
+        "name": "ScrollProgress.js",
+        "path": "src/components/ui/ScrollProgress.js",
+        "type": "UI Component",
+        "dependencies": ["Scroll tracking"],
+        "stateManagement": "useState",
+        "reusabilityScore": 4,
+        "complexity": "Low",
+        "props": ["color", "height"],
+        "hooks": ["useState", "useEffect"],
+        "notes": "Scroll progress indicator"
+      },
+      {
+        "name": "ServiceIcon.js",
+        "path": "src/components/icons/ServiceIcon.js",
+        "type": "Icon Component",
+        "dependencies": ["SVG icons"],
+        "stateManagement": "None",
+        "reusabilityScore": 5,
+        "complexity": "Low",
+        "props": ["service", "size", "color"],
+        "hooks": [],
+        "notes": "Service-specific icon component"
+      }
+    ],
+    "effectComponents": [
+      {
+        "name": "AnimatedBackground.js",
+        "path": "src/components/AnimatedBackground.js",
+        "type": "Effect Component",
+        "dependencies": ["Canvas API"],
+        "stateManagement": "useRef",
+        "reusabilityScore": 3,
+        "complexity": "High",
+        "props": ["theme", "intensity"],
+        "hooks": ["useRef", "useEffect"],
+        "notes": "Animated canvas background"
+      },
+      {
+        "name": "CursorTrail.js",
+        "path": "src/components/effects/CursorTrail.js",
+        "type": "Effect Component",
+        "dependencies": ["Mouse tracking"],
+        "stateManagement": "useState",
+        "reusabilityScore": 4,
+        "complexity": "Medium",
+        "props": ["color", "size"],
+        "hooks": ["useState", "useEffect"],
+        "notes": "Cursor trail animation effect"
+      },
+      {
+        "name": "LiquidLightSystem.js",
+        "path": "src/components/effects/LiquidLightSystem.js",
+        "type": "Effect Component",
+        "dependencies": ["WebGL", "Shaders"],
+        "stateManagement": "useRef",
+        "reusabilityScore": 2,
+        "complexity": "Very High",
+        "props": ["intensity", "color"],
+        "hooks": ["useRef", "useEffect"],
+        "notes": "Advanced liquid light effect with shaders"
+      },
+      {
+        "name": "ThemeController.js",
+        "path": "src/components/effects/ThemeController.js",
+        "type": "System Component",
+        "dependencies": ["Theme context"],
+        "stateManagement": "Context",
+        "reusabilityScore": 4,
+        "complexity": "Medium",
+        "props": [],
+        "hooks": ["useContext", "useEffect"],
+        "notes": "Theme management and persistence"
+      }
+    ],
+    "toolComponents": [
+      {
+        "name": "ROICalculator.js",
+        "path": "src/components/tools/ROICalculator.js",
+        "type": "Business Tool",
+        "dependencies": ["Calculation logic"],
+        "stateManagement": "useState",
+        "reusabilityScore": 2,
+        "complexity": "High",
+        "props": ["industry", "size"],
+        "hooks": ["useState", "useEffect", "useCallback"],
+        "notes": "ROI calculation tool with industry-specific logic"
+      },
+      {
+        "name": "CompetitorFinder.js",
+        "path": "src/components/tools/CompetitorFinder.js",
+        "type": "Business Tool",
+        "dependencies": ["External APIs"],
+        "stateManagement": "useState",
+        "reusabilityScore": 2,
+        "complexity": "High",
+        "props": ["location", "industry"],
+        "hooks": ["useState", "useEffect"],
+        "notes": "Competitor analysis tool"
+      },
+      {
+        "name": "InteractiveScenarioBuilder.js",
+        "path": "src/components/tools/InteractiveScenarioBuilder.js",
+        "type": "Business Tool",
+        "dependencies": ["Scenario data"],
+        "stateManagement": "Complex",
+        "reusabilityScore": 1,
+        "complexity": "Very High",
+        "props": ["scenarios"],
+        "hooks": ["useState", "useReducer", "useCallback"],
+        "notes": "Interactive scenario building tool"
+      }
+    ]
+  },
+  "analysis": {
+    "reusabilityDistribution": {
+      "high": 12,
+      "medium": 31,
+      "low": 46
+    },
+    "complexityDistribution": {
+      "low": 23,
+      "medium": 34,
+      "high": 21,
+      "veryHigh": 11
+    },
+    "stateManagementPatterns": {
+      "none": 18,
+      "useState": 42,
+      "useReducer": 3,
+      "context": 6,
+      "external": 8,
+      "complex": 12
+    },
+    "issuesFound": {
+      "oversizedComponents": ["BundleBuilder.js", "InteractiveScenarioBuilder.js"],
+      "duplicateLogic": ["Multiple CTA components", "Form validation patterns"],
+      "inconsistentNaming": ["Mixed .js/.jsx extensions"],
+      "missingErrorHandling": ["Most form components", "API integration components"],
+      "performanceIssues": ["Three.js components", "Heavy animation components"]
+    },
+    "refactoringPriorities": [
+      {
+        "component": "BundleBuilder.js",
+        "priority": "Critical",
+        "reason": "Too large, multiple responsibilities",
+        "effort": "High"
+      },
+      {
+        "component": "Landing page components",
+        "priority": "High",
+        "reason": "Duplicate functionality across pages",
+        "effort": "Medium"
+      },
+      {
+        "component": "Form components",
+        "priority": "Medium",
+        "reason": "Inconsistent validation patterns",
+        "effort": "Medium"
+      },
+      {
+        "component": "Three.js components",
+        "priority": "Medium",
+        "reason": "Performance optimization needed",
+        "effort": "High"
+      }
+    ]
+  }
+}

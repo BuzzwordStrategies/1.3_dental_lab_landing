@@ -1,0 +1,694 @@
+{
+  "metadata": {
+    "auditDate": "2025-05-29",
+    "projectName": "Dental Lab Landing Page",
+    "packageManager": "npm",
+    "nodeVersion": "18.x",
+    "totalDependencies": 47,
+    "totalDevDependencies": 4,
+    "vulnerabilities": {
+      "critical": 0,
+      "high": 6,
+      "moderate": 2,
+      "low": 0,
+      "total": 8
+    }
+  },
+  "dependencies": {
+    "production": [
+      {
+        "name": "@emailjs/browser",
+        "version": "^4.4.1",
+        "category": "Email Services",
+        "usage": "Contact form submissions",
+        "bundleSize": "~45KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - actively used"
+      },
+      {
+        "name": "@googlemaps/js-api-loader",
+        "version": "^1.16.8",
+        "category": "Maps",
+        "usage": "Google Maps integration",
+        "bundleSize": "~25KB",
+        "status": "Configured but unused",
+        "security": "Clean",
+        "recommendation": "Remove - not implemented"
+      },
+      {
+        "name": "@gsap/react",
+        "version": "^2.1.2",
+        "category": "Animation",
+        "usage": "GSAP React integration",
+        "bundleSize": "~15KB",
+        "status": "Redundant",
+        "security": "Clean",
+        "recommendation": "Remove - use Framer Motion instead"
+      },
+      {
+        "name": "@mojs/core",
+        "version": "^1.3.0",
+        "category": "Animation",
+        "usage": "Motion graphics",
+        "bundleSize": "~120KB",
+        "status": "Redundant",
+        "security": "Clean",
+        "recommendation": "Remove - use Framer Motion instead"
+      },
+      {
+        "name": "@react-spring/three",
+        "version": "^10.0.1",
+        "category": "Animation",
+        "usage": "Three.js animations",
+        "bundleSize": "~35KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - used in 3D components"
+      },
+      {
+        "name": "@react-three/drei",
+        "version": "^9.88.13",
+        "category": "3D Graphics",
+        "usage": "Three.js utilities",
+        "bundleSize": "~180KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - essential for 3D features"
+      },
+      {
+        "name": "@react-three/fiber",
+        "version": "^8.15.19",
+        "category": "3D Graphics",
+        "usage": "React Three.js renderer",
+        "bundleSize": "~85KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - core 3D functionality"
+      },
+      {
+        "name": "@react-three/postprocessing",
+        "version": "^3.0.4",
+        "category": "3D Graphics",
+        "usage": "Post-processing effects",
+        "bundleSize": "~65KB",
+        "status": "Limited use",
+        "security": "Clean",
+        "recommendation": "Review - may be overkill"
+      },
+      {
+        "name": "@stripe/react-stripe-js",
+        "version": "^2.4.0",
+        "category": "Payment",
+        "usage": "Stripe React components",
+        "bundleSize": "~45KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - essential for payments"
+      },
+      {
+        "name": "@stripe/stripe-js",
+        "version": "^2.2.2",
+        "category": "Payment",
+        "usage": "Stripe JavaScript SDK",
+        "bundleSize": "~35KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - essential for payments"
+      },
+      {
+        "name": "@supabase/supabase-js",
+        "version": "^2.38.0",
+        "category": "Database",
+        "usage": "Supabase client",
+        "bundleSize": "~125KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - core backend functionality"
+      },
+      {
+        "name": "ajv",
+        "version": "^8.17.1",
+        "category": "Validation",
+        "usage": "JSON schema validation",
+        "bundleSize": "~45KB",
+        "status": "Indirect dependency",
+        "security": "Clean",
+        "recommendation": "Keep - required by other packages"
+      },
+      {
+        "name": "animejs",
+        "version": "^4.0.2",
+        "category": "Animation",
+        "usage": "Animation library",
+        "bundleSize": "~25KB",
+        "status": "Redundant",
+        "security": "Clean",
+        "recommendation": "Remove - use Framer Motion instead"
+      },
+      {
+        "name": "axios",
+        "version": "^1.4.0",
+        "category": "HTTP Client",
+        "usage": "API requests",
+        "bundleSize": "~35KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - used for API calls"
+      },
+      {
+        "name": "body-parser",
+        "version": "^1.20.2",
+        "category": "Server",
+        "usage": "Express middleware",
+        "bundleSize": "~25KB",
+        "status": "Server-side only",
+        "security": "Clean",
+        "recommendation": "Keep - server functionality"
+      },
+      {
+        "name": "chart.js",
+        "version": "^4.4.9",
+        "category": "Charts",
+        "usage": "Data visualization",
+        "bundleSize": "~185KB",
+        "status": "Limited use",
+        "security": "Clean",
+        "recommendation": "Review - may be replaceable with lighter alternative"
+      },
+      {
+        "name": "cors",
+        "version": "^2.8.5",
+        "category": "Server",
+        "usage": "CORS middleware",
+        "bundleSize": "~5KB",
+        "status": "Server-side only",
+        "security": "Clean",
+        "recommendation": "Keep - server functionality"
+      },
+      {
+        "name": "dotenv",
+        "version": "^16.3.1",
+        "category": "Configuration",
+        "usage": "Environment variables",
+        "bundleSize": "~5KB",
+        "status": "Development only",
+        "security": "Clean",
+        "recommendation": "Keep - development tool"
+      },
+      {
+        "name": "express",
+        "version": "^4.18.2",
+        "category": "Server",
+        "usage": "Web server framework",
+        "bundleSize": "~65KB",
+        "status": "Server-side only",
+        "security": "Clean",
+        "recommendation": "Keep - server functionality"
+      },
+      {
+        "name": "framer-motion",
+        "version": "^12.15.0",
+        "category": "Animation",
+        "usage": "Primary animation library",
+        "bundleSize": "~155KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - primary animation library"
+      },
+      {
+        "name": "gsap",
+        "version": "^3.13.0",
+        "category": "Animation",
+        "usage": "Advanced animations",
+        "bundleSize": "~125KB",
+        "status": "Redundant",
+        "security": "Clean",
+        "recommendation": "Remove - use Framer Motion instead"
+      },
+      {
+        "name": "http-proxy-middleware",
+        "version": "^2.0.6",
+        "category": "Development",
+        "usage": "Proxy middleware",
+        "bundleSize": "~15KB",
+        "status": "Development only",
+        "security": "Clean",
+        "recommendation": "Keep - development tool"
+      },
+      {
+        "name": "jsonwebtoken",
+        "version": "^9.0.0",
+        "category": "Authentication",
+        "usage": "JWT handling",
+        "bundleSize": "~25KB",
+        "status": "Server-side only",
+        "security": "Clean",
+        "recommendation": "Keep - authentication"
+      },
+      {
+        "name": "lenis",
+        "version": "^1.3.3",
+        "category": "Scroll",
+        "usage": "Smooth scrolling",
+        "bundleSize": "~15KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - smooth scroll functionality"
+      },
+      {
+        "name": "lottie-react",
+        "version": "^2.4.1",
+        "category": "Animation",
+        "usage": "Lottie animations",
+        "bundleSize": "~45KB",
+        "status": "Redundant",
+        "security": "Clean",
+        "recommendation": "Remove - use Framer Motion instead"
+      },
+      {
+        "name": "lottie-web",
+        "version": "^5.13.0",
+        "category": "Animation",
+        "usage": "Lottie animations",
+        "bundleSize": "~85KB",
+        "status": "Redundant",
+        "security": "Clean",
+        "recommendation": "Remove - use Framer Motion instead"
+      },
+      {
+        "name": "micro",
+        "version": "^10.0.1",
+        "category": "Server",
+        "usage": "Microservice framework",
+        "bundleSize": "~5KB",
+        "status": "Unused",
+        "security": "Clean",
+        "recommendation": "Remove - not used"
+      },
+      {
+        "name": "nodemon",
+        "version": "^3.0.2",
+        "category": "Development",
+        "usage": "Development server",
+        "bundleSize": "~0KB (dev only)",
+        "status": "Development only",
+        "security": "Clean",
+        "recommendation": "Keep - development tool"
+      },
+      {
+        "name": "papaparse",
+        "version": "^5.5.3",
+        "category": "Data Processing",
+        "usage": "CSV parsing",
+        "bundleSize": "~45KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - used for data import"
+      },
+      {
+        "name": "pdf-lib",
+        "version": "^1.17.1",
+        "category": "Document",
+        "usage": "PDF generation",
+        "bundleSize": "~185KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - contract generation"
+      },
+      {
+        "name": "react",
+        "version": "^18.2.0",
+        "category": "Framework",
+        "usage": "Core React library",
+        "bundleSize": "~45KB",
+        "status": "Core",
+        "security": "Clean",
+        "recommendation": "Keep - core framework"
+      },
+      {
+        "name": "react-beautiful-dnd",
+        "version": "^13.1.1",
+        "category": "UI",
+        "usage": "Drag and drop",
+        "bundleSize": "~65KB",
+        "status": "Limited use",
+        "security": "Clean",
+        "recommendation": "Review - may not be needed"
+      },
+      {
+        "name": "react-chartjs-2",
+        "version": "^5.3.0",
+        "category": "Charts",
+        "usage": "Chart.js React wrapper",
+        "bundleSize": "~15KB",
+        "status": "Limited use",
+        "security": "Clean",
+        "recommendation": "Review - depends on Chart.js usage"
+      },
+      {
+        "name": "react-dom",
+        "version": "^18.2.0",
+        "category": "Framework",
+        "usage": "React DOM renderer",
+        "bundleSize": "~135KB",
+        "status": "Core",
+        "security": "Clean",
+        "recommendation": "Keep - core framework"
+      },
+      {
+        "name": "react-dropzone",
+        "version": "^14.3.8",
+        "category": "UI",
+        "usage": "File upload",
+        "bundleSize": "~25KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - file upload functionality"
+      },
+      {
+        "name": "react-hook-form",
+        "version": "^7.56.4",
+        "category": "Forms",
+        "usage": "Form management",
+        "bundleSize": "~35KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - form handling"
+      },
+      {
+        "name": "react-hot-toast",
+        "version": "^2.5.2",
+        "category": "UI",
+        "usage": "Toast notifications",
+        "bundleSize": "~15KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - user feedback"
+      },
+      {
+        "name": "react-intersection-observer",
+        "version": "^9.16.0",
+        "category": "UI",
+        "usage": "Intersection observer",
+        "bundleSize": "~8KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - scroll animations"
+      },
+      {
+        "name": "react-parallax-tilt",
+        "version": "^1.7.296",
+        "category": "Animation",
+        "usage": "Parallax effects",
+        "bundleSize": "~12KB",
+        "status": "Limited use",
+        "security": "Clean",
+        "recommendation": "Review - may be replaceable"
+      },
+      {
+        "name": "react-router-dom",
+        "version": "^7.6.1",
+        "category": "Routing",
+        "usage": "Client-side routing",
+        "bundleSize": "~45KB",
+        "status": "Minimal use",
+        "security": "Clean",
+        "recommendation": "Review - single page app may not need"
+      },
+      {
+        "name": "react-scripts",
+        "version": "5.0.1",
+        "category": "Build Tools",
+        "usage": "Create React App scripts",
+        "bundleSize": "~0KB (build only)",
+        "status": "Core",
+        "security": "Vulnerable",
+        "recommendation": "Update - has security vulnerabilities"
+      },
+      {
+        "name": "react-spring",
+        "version": "^10.0.1",
+        "category": "Animation",
+        "usage": "Spring animations",
+        "bundleSize": "~55KB",
+        "status": "Redundant",
+        "security": "Clean",
+        "recommendation": "Remove - use Framer Motion instead"
+      },
+      {
+        "name": "react-typed",
+        "version": "^2.0.12",
+        "category": "Animation",
+        "usage": "Typing animations",
+        "bundleSize": "~15KB",
+        "status": "Limited use",
+        "security": "Clean",
+        "recommendation": "Review - may be replaceable with Framer Motion"
+      },
+      {
+        "name": "stripe",
+        "version": "^14.5.0",
+        "category": "Payment",
+        "usage": "Stripe server SDK",
+        "bundleSize": "~0KB (server only)",
+        "status": "Server-side only",
+        "security": "Clean",
+        "recommendation": "Keep - payment processing"
+      },
+      {
+        "name": "three",
+        "version": "^0.176.0",
+        "category": "3D Graphics",
+        "usage": "3D graphics library",
+        "bundleSize": "~585KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - core 3D functionality"
+      },
+      {
+        "name": "uuid",
+        "version": "^9.0.1",
+        "category": "Utilities",
+        "usage": "UUID generation",
+        "bundleSize": "~8KB",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - ID generation"
+      }
+    ],
+    "devDependencies": [
+      {
+        "name": "autoprefixer",
+        "version": "^10.4.14",
+        "category": "Build Tools",
+        "usage": "CSS autoprefixing",
+        "bundleSize": "~0KB (build only)",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - CSS processing"
+      },
+      {
+        "name": "concurrently",
+        "version": "^8.2.2",
+        "category": "Development",
+        "usage": "Run multiple commands",
+        "bundleSize": "~0KB (dev only)",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - development workflow"
+      },
+      {
+        "name": "postcss",
+        "version": "^8.4.24",
+        "category": "Build Tools",
+        "usage": "CSS processing",
+        "bundleSize": "~0KB (build only)",
+        "status": "Active",
+        "security": "Vulnerable",
+        "recommendation": "Update - has security vulnerabilities"
+      },
+      {
+        "name": "tailwindcss",
+        "version": "^3.3.0",
+        "category": "Styling",
+        "usage": "Utility-first CSS",
+        "bundleSize": "~0KB (build only)",
+        "status": "Active",
+        "security": "Clean",
+        "recommendation": "Keep - primary styling framework"
+      }
+    ]
+  },
+  "vulnerabilities": [
+    {
+      "package": "nth-check",
+      "severity": "high",
+      "description": "Inefficient Regular Expression Complexity in nth-check",
+      "path": "react-scripts > @svgr/webpack > @svgr/plugin-svgo > svgo > css-select > nth-check",
+      "recommendation": "Update react-scripts or apply patch",
+      "cve": "GHSA-rp65-9cf3-cjxr"
+    },
+    {
+      "package": "postcss",
+      "severity": "moderate",
+      "description": "PostCSS line return parsing error",
+      "path": "react-scripts > resolve-url-loader > postcss",
+      "recommendation": "Update postcss to 8.4.31+",
+      "cve": "GHSA-7fh5-64p2-3vv2j"
+    }
+  ],
+  "bundleAnalysis": {
+    "estimatedTotalSize": "2.5MB",
+    "largestDependencies": [
+      {
+        "name": "three",
+        "size": "585KB",
+        "percentage": "23.4%"
+      },
+      {
+        "name": "chart.js",
+        "size": "185KB",
+        "percentage": "7.4%"
+      },
+      {
+        "name": "pdf-lib",
+        "size": "185KB",
+        "percentage": "7.4%"
+      },
+      {
+        "name": "@react-three/drei",
+        "size": "180KB",
+        "percentage": "7.2%"
+      },
+      {
+        "name": "framer-motion",
+        "size": "155KB",
+        "percentage": "6.2%"
+      },
+      {
+        "name": "react-dom",
+        "size": "135KB",
+        "percentage": "5.4%"
+      },
+      {
+        "name": "@supabase/supabase-js",
+        "size": "125KB",
+        "percentage": "5.0%"
+      },
+      {
+        "name": "gsap",
+        "size": "125KB",
+        "percentage": "5.0%"
+      },
+      {
+        "name": "@mojs/core",
+        "size": "120KB",
+        "percentage": "4.8%"
+      },
+      {
+        "name": "lottie-web",
+        "size": "85KB",
+        "percentage": "3.4%"
+      }
+    ],
+    "redundantLibraries": [
+      {
+        "category": "Animation",
+        "libraries": ["gsap", "@gsap/react", "animejs", "@mojs/core", "lottie-react", "lottie-web", "react-spring"],
+        "totalSize": "450KB",
+        "recommendation": "Keep only Framer Motion and @react-spring/three"
+      }
+    ],
+    "unusedDependencies": [
+      {
+        "name": "@googlemaps/js-api-loader",
+        "reason": "Google Maps not implemented",
+        "size": "25KB"
+      },
+      {
+        "name": "micro",
+        "reason": "Not used in codebase",
+        "size": "5KB"
+      }
+    ]
+  },
+  "recommendations": {
+    "immediate": [
+      {
+        "action": "Update react-scripts",
+        "reason": "Security vulnerabilities",
+        "impact": "High",
+        "effort": "Low"
+      },
+      {
+        "action": "Update postcss",
+        "reason": "Security vulnerabilities",
+        "impact": "High",
+        "effort": "Low"
+      },
+      {
+        "action": "Remove unused animation libraries",
+        "reason": "Bundle size reduction",
+        "impact": "High",
+        "effort": "Medium",
+        "savings": "450KB"
+      }
+    ],
+    "shortTerm": [
+      {
+        "action": "Remove @googlemaps/js-api-loader",
+        "reason": "Not implemented",
+        "impact": "Low",
+        "effort": "Low",
+        "savings": "25KB"
+      },
+      {
+        "action": "Remove micro",
+        "reason": "Unused",
+        "impact": "Low",
+        "effort": "Low",
+        "savings": "5KB"
+      },
+      {
+        "action": "Review chart.js usage",
+        "reason": "Large size, limited use",
+        "impact": "Medium",
+        "effort": "Medium",
+        "savings": "200KB"
+      }
+    ],
+    "longTerm": [
+      {
+        "action": "Consider react-router-dom removal",
+        "reason": "Single page app",
+        "impact": "Low",
+        "effort": "Medium",
+        "savings": "45KB"
+      },
+      {
+        "action": "Evaluate Three.js tree shaking",
+        "reason": "Large bundle size",
+        "impact": "High",
+        "effort": "High",
+        "savings": "200KB+"
+      }
+    ]
+  },
+  "optimizationPotential": {
+    "totalSavings": "725KB",
+    "percentageReduction": "29%",
+    "priorityActions": [
+      "Remove redundant animation libraries",
+      "Update vulnerable packages",
+      "Remove unused dependencies",
+      "Implement code splitting for Three.js"
+    ]
+  },
+  "complianceStatus": {
+    "licenses": "All dependencies use permissive licenses (MIT, Apache-2.0, BSD)",
+    "securityScore": "6/10 - Multiple vulnerabilities need addressing",
+    "maintenanceScore": "7/10 - Most packages are well-maintained",
+    "performanceScore": "5/10 - Bundle size optimization needed"
+  }
+}

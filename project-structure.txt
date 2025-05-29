@@ -1,0 +1,187 @@
+# Dental Lab Landing Page - Project Structure Analysis
+
+## Root Level Files
+- .gitignore - Git ignore configuration
+- netlify.toml - Netlify deployment configuration
+- package.json - Node.js dependencies and scripts
+- package-lock.json - Locked dependency versions
+- postcss.config.js - PostCSS configuration
+- README.md - Project documentation
+- tailwind.config.js - Tailwind CSS configuration
+
+## Directory Structure
+
+### /build/
+- Production build output directory
+
+### /_backup_original/
+- Backup of original project files
+
+### /lib/
+- supabase.js - Supabase client configuration
+
+### /netlify/functions/
+- create-order.js - Order creation endpoint
+- create-stripe-checkout.js - Stripe checkout session creation
+- debug-supabase.js - Supabase debugging utilities
+- generate-agreement-pdf.js - PDF agreement generation
+- get-agreement-pdf.js - PDF retrieval endpoint
+- get-order.js - Order retrieval endpoint
+- get-pdf.js - Generic PDF retrieval
+- save-agreement.js - Agreement saving endpoint
+- save-bundle-data.js - Bundle data persistence
+- save-bundle-unified.js - Unified bundle saving
+- save-order.js - Order persistence
+- test-env.js - Environment testing
+- test-supabase-connection.js - Supabase connection testing
+- test-supabase.js - Supabase functionality testing
+- update-order-status.js - Order status updates
+- update-payment-status.js - Payment status updates
+- utils/supabase-service.js - Supabase service utilities
+
+### /public/
+- index.html - Main HTML template
+- auth-callback.html - Authentication callback page
+- /assets/patterns/ - SVG pattern assets
+  - dark-flow.svg
+  - light-waves.svg
+- /cancel/ - Payment cancellation page
+- /success/ - Payment success page
+- /thank-you/ - Thank you page
+
+### /server/
+- server.js - Express server configuration
+- /routes/
+  - stripe.js - Stripe route handlers
+  - supabase.js - Supabase route handlers
+
+### /src/
+Main application source code
+
+#### /src/components/
+React components organized by functionality:
+
+**Core Components:**
+- App.js - Main application component
+- AgreementViewer.js - Contract agreement viewer
+- AnimatedBackground.js - Animated background component
+- BundleBuilder.js - Bundle configuration component
+- Card.jsx/.css - Reusable card component
+- ContractAgreementForm.js - Contract form component
+- DiscountSlider.jsx - Discount selection slider
+- FreebieCard.jsx - Free resource card
+- OrderWorkflow.js - Order processing workflow
+- PrivacyPolicy.js - Privacy policy component
+- PrivacyPolicyModal.js - Privacy policy modal
+- ServiceCard.jsx - Service display card
+- ThemeToggle.jsx - Theme switching component
+- UserInfoForm.js - User information form
+
+**Effects (/effects/):**
+- CursorTrail.js - Cursor trail animation
+- LiquidLightSystem.js - Liquid light effects
+- ThemeController.js - Theme management
+
+**Forms (/forms/):**
+- BlogPostForm.js - Blog post lead form
+
+**Icons (/icons/):**
+- ServiceIcon.js - Service icon component
+
+**Interactive (/interactive/):**
+- [Directory exists but appears empty]
+
+**Landing Page Components (/landing/):**
+- BundleCard.js - Bundle display card
+- BundlePurchaseModal.js - Bundle purchase modal
+- CTASection.js - Call-to-action section
+- DentalLabStats.js - Statistics display
+- DiscoveryCallCTA.js - Discovery call CTA
+- DiscoveryCallModal.js - Discovery call modal
+- EnhancedBundleCard.js - Enhanced bundle card
+- FAQSection.js - FAQ section
+- FloatingCTA.js - Floating call-to-action
+- Footer.js - Page footer
+- FreeResources.js - Free resources section
+- LeadMagnetSection.js - Lead magnet section
+- NavigationHeader.js - Navigation header
+- PerformanceGuarantee.js - Performance guarantee section
+- PreBuiltBundles.js - Pre-built bundle showcase
+- ResultsDisclaimer.js - Results disclaimer
+- SectionCTA.js - Section-specific CTAs
+- ServiceModal.js - Service detail modal
+- ServicesShowcase.js - Services showcase
+- SimpleROICalculator.js - ROI calculation tool
+- SocialProofSection.js - Social proof section
+- TrustIndicators.js - Trust indicator elements
+
+**Modals (/modals/):**
+- [Directory exists but appears empty]
+
+**Sections (/sections/):**
+- BundlePreview.js - Bundle preview section
+- Footer.js - Footer section
+- Hero.js - Hero section
+- LeadCapture.js - Lead capture section
+- PainPoints.js - Pain points section
+- ServicesShowcase.js - Services showcase section
+- SocialProof.js - Social proof section
+
+**Three.js Components (/three/):**
+- FloatingDentalModels.js - 3D dental models
+- Glass3DPanel.js - 3D glass panel effect
+
+**UI Components (/ui/):**
+- CountUp.js - Animated counter
+- ServiceIcon.js - Service icon component
+
+#### /src/contexts/
+- [Directory exists for React context providers]
+
+#### /src/data/
+- services.js - Service data
+- services.json - Service data in JSON format
+
+#### /src/pages/
+Page-level components:
+- BundleBuilderLanding.jsx - Bundle builder landing page
+- DentalLabLanding.js - Main dental lab landing page
+- DentalLabMarketingLanding.js - Marketing-focused landing page
+- ImmersiveDentalLabLanding.js - Immersive landing page
+- MarketingLandingPage.js - Marketing landing page
+- TestDentalLab.js - Test page
+
+#### /src/styles/
+CSS styling files:
+- buttons.css - Button styles
+- frosted-glass-theme.css - Frosted glass theme
+- globals.css - Global styles
+- immersive.css - Immersive page styles
+- interactive-buttons.css - Interactive button styles
+
+#### /src/themes/
+Theme-specific styles:
+- dark.css - Dark theme
+- light.css - Light theme
+
+#### /src/utils/
+Utility functions:
+- animations.js - Animation utilities
+- pricing.js - Pricing calculations
+- tracking.js - Analytics tracking
+- webhookService.js - Webhook management
+
+## File Type Distribution
+- React Components (.js/.jsx): ~60 files
+- CSS Stylesheets (.css): 8 files
+- Netlify Functions (.js): 14 files
+- Configuration Files: 6 files
+- HTML Files: 4 files
+- JSON Data Files: 1 file
+- SVG Assets: 2 files
+
+## Potential Issues Identified
+1. Duplicate directory structure (srccomponents*, srcdata*, etc.) - appears to be filesystem artifacts
+2. Empty directories (/interactive/, /modals/) - may indicate incomplete features
+3. Multiple landing page variations - potential confusion/redundancy
+4. Mixed file extensions (.js vs .jsx) - inconsistent naming convention
