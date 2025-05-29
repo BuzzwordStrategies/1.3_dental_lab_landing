@@ -49,3 +49,4 @@ SUPABASE_SERVICE_KEY=your_supabase_service_key
 ## Deployment
 
 This project is configured for Netlify deployment. The Express server should be deployed separately to a platform like Heroku, Render, or similar.
+"# 1.6_landing_page" 
