@@ -1,0 +1,204 @@
+/* Interactive Button Styling for CTAs */
+
+/* Base button styles */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #D28C00 0%, #FFBA38 100%);
+}
+
+/* Hover state with glow effect */
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(210, 140, 0, 0.4), 
+              0 0 40px rgba(210, 140, 0, 0.3);
+}
+
+/* Fade animation on hover */
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+/* Active state */
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(210, 140, 0, 0.3);
+}
+
+/* Apply to specific buttons */
+.bg-amber-500,
+.bg-gradient-to-r.from-amber-500.to-orange-600,
+button[class*="bg-amber"],
+a[class*="bg-amber"] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.bg-amber-500:hover,
+.bg-gradient-to-r.from-amber-500.to-orange-600:hover,
+button[class*="bg-amber"]:hover,
+a[class*="bg-amber"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(210, 140, 0, 0.4), 
+              0 0 40px rgba(210, 140, 0, 0.3);
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+  /* Service cards - single column on mobile */
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Bundle cards - stack vertically */
+  .bundle-cards {
+    flex-direction: column;
+  }
+  
+  /* Adjust font sizes for mobile */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  /* Ensure buttons are full width on mobile */
+  .cta-button,
+  button,
+  a[role="button"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  /* Adjust padding/margins for mobile */
+  section {
+    padding: 2rem 1rem;
+  }
+  
+  /* Mobile navigation */
+  nav {
+    display: none;
+  }
+  
+  /* Mobile header adjustments */
+  header .max-w-7xl {
+    padding: 1rem;
+  }
+  
+  /* Service cards on mobile */
+  .grid.md\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Bundle pricing cards on mobile */
+  .grid.md\:grid-cols-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  /* Form container on mobile */
+  .grid.md\:grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  /* Hero text adjustments */
+  .text-5xl.md\:text-7xl {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .text-xl.md\:text-2xl {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+  
+  /* Lead magnet CTAs on mobile */
+  .grid.md\:grid-cols-2.gap-6 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* Floating bundle button on mobile */
+  .fixed.bottom-8.right-8 {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Service cards - 2 columns on tablet */
+  .grid.md\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Bundle cards - maintain 3 columns but adjust spacing */
+  .grid.md\:grid-cols-3 {
+    gap: 1rem;
+  }
+}
+
+/* Enhanced button animations */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(210, 140, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(210, 140, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(210, 140, 0, 0);
+  }
+}
+
+.cta-button:hover {
+  animation: pulse 2s infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition: all 0.3s ease;
+}
+
+/* Focus states for accessibility */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #D28C00;
+  outline-offset: 2px;
+}
+
+/* Loading states */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}

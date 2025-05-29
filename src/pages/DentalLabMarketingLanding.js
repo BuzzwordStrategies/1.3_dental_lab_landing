@@ -15,7 +15,13 @@ import FloatingCTA from '../components/landing/FloatingCTA';
 import SectionCTA from '../components/landing/SectionCTA';
 import PerformanceGuarantee from '../components/landing/PerformanceGuarantee';
 import ServiceIcon from '../components/icons/ServiceIcon';
+import ServiceModal from '../components/landing/ServiceModal';
+import EnhancedBundleCard from '../components/landing/EnhancedBundleCard';
+import SimpleROICalculator from '../components/landing/SimpleROICalculator';
+import FreeResources from '../components/landing/FreeResources';
+import DiscoveryCallCTA from '../components/landing/DiscoveryCallCTA';
 import '../styles/animations.css';
+import '../styles/interactive-buttons.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,6 +50,8 @@ const DentalLabMarketingLanding = () => {
   const [showSEOAuditForm, setShowSEOAuditForm] = useState(false);
   const [showBlogPostForm, setShowBlogPostForm] = useState(false);
   const [showDiscoveryModal, setShowDiscoveryModal] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
+  const [showServiceModal, setShowServiceModal] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   // Lead magnet CTAs configuration
@@ -499,24 +507,24 @@ const DentalLabMarketingLanding = () => {
                 <div className="bg-black/30 rounded-xl p-4">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-300">Average Monthly Cases (Current)</span>
-                    <span className="text-white font-bold">50</span>
+                    <span className="text-white font-bold">100</span>
                   </div>
                 </div>
                 <div className="bg-black/30 rounded-xl p-4">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-300">With Digital Marketing (+40%)</span>
-                    <span className="text-amber-500 font-bold">70</span>
+                    <span className="text-gray-300">With Digital Marketing (+30%)</span>
+                    <span className="text-amber-500 font-bold">130</span>
                   </div>
                 </div>
                 <div className="bg-black/30 rounded-xl p-4">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-300">Additional Monthly Revenue</span>
-                    <span className="text-green-500 font-bold">$15,000+</span>
+                    <span className="text-green-500 font-bold">$15,000</span>
                   </div>
                 </div>
               </div>
               <p className="text-sm text-gray-400 mt-4 text-center">
-                Based on $750 average case value
+                Based on $500 average case value
               </p>
             </motion.div>
           </div>
@@ -547,49 +555,85 @@ const DentalLabMarketingLanding = () => {
             {/* Service Cards */}
             {[
               {
-                icon: "M",
+                icon: (
+                  <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                ),
                 title: "Meta Ads Management",
                 description: "Reach 77% of dentists active on Facebook & Instagram with laser-targeted campaigns",
                 pricing: { base: 770, standard: 980, premium: 1410 }
               },
               {
-                icon: "G",
+                icon: (
+                  <svg className="w-8 h-8" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                  </svg>
+                ),
                 title: "Google Ads Management",
                 description: "Capture high-intent searches from dentists actively looking for lab services",
                 pricing: { base: 770, standard: 980, premium: 1410 }
               },
               {
-                icon: "T",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+                  </svg>
+                ),
                 title: "TikTok Ads Management",
                 description: "Connect with younger dentists where 62% consume professional content",
                 pricing: { base: 770, standard: 980, premium: 1410 }
               },
               {
-                icon: "S",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                  </svg>
+                ),
                 title: "SEO Optimization",
                 description: "Rank #1 when dentists search for \"dental lab near me\" and specialty services",
                 pricing: { base: 790, standard: 1000, premium: 1450 }
               },
               {
-                icon: "📍",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                ),
                 title: "Google Business Profile",
                 description: "Be 2.7x more likely to be considered reputable with optimized GBP",
                 pricing: { base: 315, standard: 420, premium: 675 }
               },
               {
-                icon: "🔗",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                  </svg>
+                ),
                 title: "Backlink Building",
                 description: "Build authority with high-quality dental industry backlinks",
                 pricing: { base: 420, standard: 630, premium: 990 }
               },
               {
-                icon: "📝",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                ),
                 title: "Content Creation",
                 description: "Educational content that positions your lab as the industry expert",
                 pricing: { base: 210, standard: 420, premium: 760 }
               },
               {
-                icon: "📱",
+                icon: (
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                  </svg>
+                ),
                 title: "Social Media Management",
                 description: "Stay top-of-mind with consistent, professional social presence",
                 pricing: { base: 315, standard: 525, premium: 895 }
@@ -597,11 +641,15 @@ const DentalLabMarketingLanding = () => {
             ].map((service, index) => (
               <motion.div 
                 key={index}
-                className="bg-black/50 backdrop-blur-sm rounded-2xl p-6 border border-amber-500/20 hover:border-amber-500/50 transition-all"
+                className="bg-black/50 backdrop-blur-sm rounded-2xl p-6 border border-amber-500/20 hover:border-amber-500/50 transition-all cursor-pointer"
                 {...fadeInUp}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
+                onClick={() => {
+                  setSelectedService(service.title);
+                  setShowServiceModal(true);
+                }}
               >
                 <div className="text-amber-500 mb-4 text-4xl font-bold">
                   {service.icon}
@@ -610,7 +658,7 @@ const DentalLabMarketingLanding = () => {
                 <p className="text-gray-400 text-sm mb-4">
                   {service.description}
                 </p>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm mb-4">
                   <div className="flex justify-between">
                     <span className="text-gray-500">Base:</span>
                     <span className="text-white font-bold">${service.pricing.base}/mo</span>
@@ -624,6 +672,9 @@ const DentalLabMarketingLanding = () => {
                     <span className="text-white font-bold">${service.pricing.premium}/mo</span>
                   </div>
                 </div>
+                <button className="w-full py-2 bg-amber-500/20 text-amber-500 rounded-lg hover:bg-amber-500/30 transition-colors text-sm font-semibold">
+                  Learn More →
+                </button>
               </motion.div>
             ))}
           </div>
@@ -669,74 +720,42 @@ const DentalLabMarketingLanding = () => {
             Save up to 20% with strategic bundles.
           </motion.p>
 
-          {/* Pre-configured Bundles */}
+          {/* Pre-configured Bundles with Enhanced Bundle Cards */}
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <BundleCard 
+            <EnhancedBundleCard 
               bundle={{
-                name: "Foundation Bundle",
-                tagline: "Essential digital presence for growing labs",
-                services: {
-                  "SEO": "Base",
-                  "Google Ads": "Base",
-                  "Social Posts": "Base"
-                },
-                monthlyPrice: 1895,
-                features: [
-                  "10 targeted keywords",
-                  "Google Ads campaign setup",
-                  "10 social posts monthly",
-                  "Monthly performance reports"
-                ],
-                idealFor: "Labs ready to establish their digital foundation"
+                id: 'foundation',
+                name: 'Foundation Bundle',
+                description: 'Essential digital presence for growing labs',
+                services: ['SEO', 'GBP Ranker', 'Content'],
+                basePrice: 1420,
+                popular: false
               }}
-              bundleKey="foundation"
+              index={0}
             />
             
-            <BundleCard 
+            <EnhancedBundleCard 
               bundle={{
-                name: "Growth Bundle",
-                tagline: "Accelerate your lab's market expansion",
-                services: {
-                  "SEO": "Standard",
-                  "Google Ads": "Standard",
-                  "Meta Ads": "Standard",
-                  "Content": "Base"
-                },
-                monthlyPrice: 3590,
-                features: [
-                  "20 targeted keywords",
-                  "Advanced Google & Meta campaigns",
-                  "Monthly blog content",
-                  "Bi-weekly optimization calls"
-                ],
-                idealFor: "Labs aiming to dominate their local market"
+                id: 'growth',
+                name: 'Growth Bundle',
+                description: 'Accelerate your lab\'s market expansion',
+                services: ['Google Ads', 'Meta Ads', 'SEO', 'Content', 'Social Posts'],
+                basePrice: 3255,
+                popular: true
               }}
-              bundleKey="growth"
+              index={1}
             />
             
-            <BundleCard 
+            <EnhancedBundleCard 
               bundle={{
-                name: "Domination Bundle",
-                tagline: "Complete digital marketing dominance",
-                services: {
-                  "SEO": "Premium",
-                  "Google Ads": "Premium",
-                  "Meta Ads": "Premium",
-                  "TikTok Ads": "Standard",
-                  "Content": "Standard",
-                  "Backlinks": "Standard"
-                },
-                monthlyPrice: 6420,
-                features: [
-                  "40 targeted keywords",
-                  "Full-funnel ad campaigns",
-                  "2 monthly blog posts",
-                  "20 authority backlinks monthly",
-                  "Weekly strategy sessions"
-                ],
-                idealFor: "Labs ready to become industry leaders"
+                id: 'domination',
+                name: 'Domination Bundle',
+                description: 'Complete digital marketing dominance',
+                services: ['Google Ads', 'Meta Ads', 'TikTok Ads', 'SEO', 'GBP Ranker', 'Backlinks', 'Content', 'Social Posts'],
+                basePrice: 5620,
+                popular: false
               }}
-              bundleKey="domination"
+              index={2}
             />
           </div>
           
@@ -963,6 +982,19 @@ const DentalLabMarketingLanding = () => {
 
       {/* Add Section CTA after Pricing */}
       <SectionCTA variant="secondary" source="after-pricing" />
+
+      {/* Free Resources Section */}
+      <FreeResources />
+
+      {/* Simple ROI Calculator */}
+      <SimpleROICalculator />
+
+      {/* Discovery Call CTA */}
+      <div className="py-16 bg-gray-900">
+        <div className="max-w-4xl mx-auto px-6">
+          <DiscoveryCallCTA />
+        </div>
+      </div>
 
       {/* Social Proof Section */}
       <section className="py-20 bg-black">
@@ -1395,6 +1427,11 @@ const DentalLabMarketingLanding = () => {
       <DiscoveryCallModal 
         isOpen={showDiscoveryModal} 
         onClose={() => setShowDiscoveryModal(false)} 
+      />
+      <ServiceModal 
+        service={selectedService}
+        isOpen={showServiceModal}
+        onClose={() => setShowServiceModal(false)}
       />
     </div>
   );

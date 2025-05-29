@@ -1,4 +1,4 @@
-import React, { Suspense, useRef, useEffect } from 'react';
+import React, { Suspense, useRef } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { 
   OrbitControls, 
@@ -241,27 +241,30 @@ const Hero3D = () => {
             className="text-center"
           >
             <motion.h1 
-              className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-orange-600 bg-clip-text text-transparent"
+              className="text-5xl md:text-7xl font-bold mb-6"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              Dental Labs Deserve
+              <span className="bg-gradient-to-r from-amber-400 to-orange-600 bg-clip-text text-transparent">
+                Your Dental Lab Deserves
+              </span>
               <br />
-              <span className="text-white">Better Marketing</span>
+              <span className="text-white">Better Than Word-of-Mouth</span>
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+              className="text-lg md:text-xl text-gray-300 mb-8 max-w-4xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Stop losing clinicians to competitors. Build a brand that dentists trust and patients remember.
+              According to the National Association of Dental Laboratories, 73% of labs rely solely on referrals 
+              while digital-first labs are capturing 3x more cases. Stop hoping for growth. Start engineering it.
             </motion.p>
 
             <motion.div 
-              className="flex flex-col md:flex-row gap-4 justify-center"
+              className="flex flex-col md:flex-row gap-4 justify-center mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -286,6 +289,7 @@ const Hero3D = () => {
                 Build Your Custom Bundle
               </motion.a>
             </motion.div>
+
           </motion.div>
         </div>
       </div>

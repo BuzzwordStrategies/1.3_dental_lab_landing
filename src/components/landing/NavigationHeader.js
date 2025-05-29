@@ -47,11 +47,13 @@ const NavigationHeader = ({ theme, toggleTheme }) => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <img
-                src="https://images.squarespace-cdn.com/content/v1/673fc8d414047c5c20a42e65/ab4663d3-4840-47f0-88cf-a5b1144ed31a/Remove+background+project+%281%29.png?format=1000w"
-                alt="Buzzword Strategies"
-                className="h-10 w-auto"
-              />
+              <a href="https://www.buzzwordstrategies.com" className="cursor-pointer">
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/673fc8d414047c5c20a42e65/ab4663d3-4840-47f0-88cf-a5b1144ed31a/Remove+background+project+%281%29.png?format=1000w"
+                  alt="Buzzword Strategies"
+                  className="h-8 md:h-10 w-auto"
+                />
+              </a>
             </div>
 
             {/* Desktop Navigation */}
@@ -86,6 +88,16 @@ const NavigationHeader = ({ theme, toggleTheme }) => {
                   </svg>
                 )}
               </button>
+
+              {/* Bundle Builder Link */}
+              <a
+                href="https://bundle.buzzwordstrategies.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden md:inline-flex px-4 py-2 bg-amber-500/10 text-amber-500 hover:bg-amber-500/20 rounded-lg transition-all font-medium"
+              >
+                Bundle Builder
+              </a>
 
               {/* CTA Button */}
               <a
@@ -167,7 +179,16 @@ const NavigationHeader = ({ theme, toggleTheme }) => {
                   ))}
                 </nav>
 
-                <div className="mt-8 pt-8 border-t border-gray-700">
+                <div className="mt-8 pt-8 border-t border-gray-700 space-y-3">
+                  <a
+                    href="https://bundle.buzzwordstrategies.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center px-4 py-2 bg-amber-500/10 text-amber-500 hover:bg-amber-500/20 rounded-lg transition-all font-medium"
+                  >
+                    Bundle Builder
+                  </a>
+                  
                   <a
                     href="https://calendly.com/josh-buzzwordstrategies/discovery-call"
                     target="_blank"
