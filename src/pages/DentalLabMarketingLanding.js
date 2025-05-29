@@ -7,7 +7,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FloatingDentalModels from '../components/three/FloatingDentalModels';
 import CountUp from '../components/ui/CountUp';
-import SEOAuditForm from '../components/forms/SEOAuditForm';
 import BlogPostForm from '../components/forms/BlogPostForm';
 import BundleCard from '../components/landing/BundleCard';
 import DiscoveryCallModal from '../components/landing/DiscoveryCallModal';
@@ -20,7 +19,6 @@ import EnhancedBundleCard from '../components/landing/EnhancedBundleCard';
 import SimpleROICalculator from '../components/landing/SimpleROICalculator';
 import FreeResources from '../components/landing/FreeResources';
 import DiscoveryCallCTA from '../components/landing/DiscoveryCallCTA';
-import '../styles/animations.css';
 import '../styles/interactive-buttons.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -1416,10 +1414,6 @@ const DentalLabMarketingLanding = () => {
       <FloatingCTA />
 
       {/* Modal Forms */}
-      <SEOAuditForm 
-        isOpen={showSEOAuditForm} 
-        onClose={() => setShowSEOAuditForm(false)} 
-      />
       <BlogPostForm 
         isOpen={showBlogPostForm} 
         onClose={() => setShowBlogPostForm(false)} 
